@@ -1,0 +1,241 @@
+/*-----------------------------------------------------------------------------------*/
+/* Forms */
+/*-----------------------------------------------------------------------------------*/
+
+fieldset {
+  border: 0;
+  margin: 0;
+  -webkit-margin-after: 0;
+  margin-block-end: 0.5rem;
+  padding: 0;
+
+  > legend:first-of-type {
+    padding: 0;
+    margin: 0;
+  }
+
+  .control-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 1rem;
+
+    .control-label {
+      width: 240px;
+      padding: 0.3rem 0;
+    }
+
+    .controls {
+      position: relative;
+      flex: 1;
+      min-width: 210px;
+    }
+  }
+}
+
+// Tabs
+
+.nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  li {
+    position: relative;
+    margin: 0 8px;
+
+    &:first-of-type {
+      margin-inline-start: 0;
+    }
+
+    > a {
+      display: inline-block;
+      padding: 8px;
+    }
+
+    &.active {
+      &:after {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--primary);
+        content: "";
+      }
+    }
+  }
+}
+
+.tab-pane {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+// Popover / Tooltips
+.popover,
+.tooltip {
+  background: white;
+  padding: 10px 15px;
+  display: inline-block !important;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  margin: 4px 0;
+}
+
+.popover-title {
+  font-size: 16px;
+}
+
+// Module Edit
+.module-editable {
+  position: relative;
+  transition: all 0.2s ease;
+  outline: 1px solid rgba(0, 0, 0, 0);
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.025);
+    outline: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
+
+.btn-action {
+  background: rgba(0, 0, 0, 0.75);
+  background: var(--button-color);
+  color: white;
+  padding: 1px 1px 0px 6px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  opacity: 0;
+  transition: all 0.2s ease;
+  z-index: 1;
+
+  &:hover {
+    color: white;
+    box-shadow: inset 0 0 2rem rgba(0, 0, 0, 0.25);
+  }
+
+  a {
+    color: white;
+  }
+
+  .module-editable & {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .component_block & {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .module-editable:hover &,
+  .module-editable:focus-within &,
+  .component_block & {
+    opacity: 1;
+  }
+}
+
+.toggle-editor {
+  float: right;
+
+  .btn-action {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+// Tags
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+}
+
+.tag {
+  margin: 0 0px 4px 0;
+
+  a {
+    background-color: transparent;
+    color: white;
+  }
+
+  &:hover {
+    background-color: var(--secondary);
+  }
+}
+
+// Semantic elements
+
+time {
+  background: transparent;
+  color: inherit;
+}
+
+details > summary {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+figure figcaption {
+  padding: 0;
+}
+
+// Groups
+.btn-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    margin-right: 5px;
+  }
+}
+
+.input-append {
+  display: inline-flex;
+  justify-self: flex-start;
+  margin: .5rem 1rem .5rem 0;
+
+  > * {
+    margin: 0;
+  }
+
+  > * + * {
+    margin-inline-start: -1px;
+  }
+
+  > *:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  > *:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.radio.btn-group input[type="radio"] {
+  display: none;
+}
+
+.btn-group {
+  .btn {
+    margin-right: 0;
+  }
+}
+
+// Misc
+
+.form-search .hide,
+.form-inline .hide,
+.form-horizontal .hide {
+  display: none;
+}

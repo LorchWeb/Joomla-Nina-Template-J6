@@ -1,0 +1,97 @@
+// Category Blog 
+
+.blog-masonry {
+  .blog-header {
+    margin-bottom: 3rem;
+  }
+
+  .blog-masonry-leading {
+    margin: -12px -12px 1.5rem;
+
+    .item {
+      max-width: 100% !important;
+    }
+
+    .item-wrapper {
+      flex-direction: row;
+
+      > div {
+        flex: 1 0 50%;
+
+        > img {}
+      }
+    }
+
+    .item-content {
+      > div {
+        -webkit-line-clamp: none;
+      }
+    }
+  }
+
+  .blog-masonry-items {
+    margin: -12px -12px 0;
+  }
+
+  .item {
+    padding: 15px;
+    max-width: 100%;
+    width: 100%;
+
+    &.cols-2 {
+      max-width: 50%;
+    }
+
+    &.cols-3 {
+      max-width: 33.3%;
+    }
+
+    &.cols-4 {
+      max-width: 25%;
+    }
+
+    &.cols-5 {
+      max-width: 20%;
+    }
+  }
+
+  .item-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-image {
+    position: relative;
+    margin-bottom: 0;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  .item-content {
+    padding: 0;
+  }
+
+  h2 {
+    font-size: 1.6em;
+    margin-bottom: 5px;
+  }
+  
+  .readmore {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .blog-masonry .item[class*=" cols-"] {
+    max-width: 50%;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .blog-masonry .item[class*=" cols-"] {
+    max-width: 100%;
+  }
+}
